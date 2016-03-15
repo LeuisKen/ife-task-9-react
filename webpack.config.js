@@ -18,8 +18,18 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('style.css', {
+      disable: false,
+      allChunks: true
+    }),
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      'ROOT': __dirname
+    }
+  },
   module: {
     loaders: [
       {
@@ -27,6 +37,21 @@ module.exports = {
         loaders: [ 'babel' ],
         exclude: /node_modules/,
         include: __dirname
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+        exclude: path.join(__dirname, 'components')
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
+        include: path.join(__dirname, 'components')
+      },
+      {
+        test: /.*\.(gif|png|jpe?g)$/i,
+        loader: "url-loader?mimetype=image/png",
+        include: path.join(__dirname, 'assets')
       }
     ]
   }

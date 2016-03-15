@@ -1,5 +1,8 @@
+import 'normalize.css'
+import '../assets/styles/style.css'
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Header } from '../components'
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        test
+        <Header/>
       </div>
     )
   }
