@@ -2,10 +2,18 @@
   background: #2189bf;
   height: 56px;
   line-height: 56px;
+  min-width: 1280px;
 }
 
-.header img {
+.logo {
   display: inline-block;
   margin-left: 50px;
   vertical-align: middle;
+}
+
+.login {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 95px;
 }

@@ -1,0 +1,25 @@
+.search {
+  width: 315px;
+  height: 28px;
+  background: #fff;
+  vertical-align: middle;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.letter {
+  display: block;
+  float: left;
+  color: #aaa;
+  line-height: 28px;
+  margin-left: 15px;
+}
+
+.input {
+  height: 16px;
+  border: none;
+  outline: none;
+  display: block;
+  padding: 6px 7px;
+  margin-left: 25px;
+}
